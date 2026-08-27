@@ -1,0 +1,15 @@
+name: Deploy
+
+# Push to main → deploy to bitbaum. All logic lives in one place:
+# maonakamoto/fleetcrown/.github/workflows/selfhost-deploy.yml
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    uses: maonakamoto/fleetcrown/.github/workflows/selfhost-deploy.yml@main
+    with:
+      app: substrata
+    secrets: inherit

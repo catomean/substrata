@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+/**
+ * Substrata's design tokens — the SSOT for every visual decision.
+ *
+ * Deliberately nothing like OrangeCat's. Substrata previously rendered in
+ * OrangeCat's palette, OrangeCat's orange and OrangeCat's Space Grotesk, which
+ * made a research firm look like a skin of a Bitcoin platform. It is a separate
+ * firm and it reads as one.
+ *
+ * The choices, and why:
+ *   - A SERIF for display. Research houses set their headlines in serif; it is
+ *     the fastest way to say "this is a document, not an app".
+ *   - A mineral accent (oxidised copper, not orange). The subject is materials;
+ *     the accent is one of them, and it is used only for the current position
+ *     and one meter fill.
+ *   - System stacks throughout. No webfont fetch at build or runtime — the
+ *     fleet rule, and a research page should render before it is styled.
+ *
+ * Dark is the default expression here and light is the adaptation, because the
+ * material is dense tables read at length.
+ */
+@theme {
+  --font-heading: ui-serif, Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, 'Cascadia Mono', monospace;
+
+  --tracking-display: -0.02em;
+  --tracking-caps: 0.12em;
+
+  --spacing-shell: 76rem;
+
+  /* Tier 1 — primitives. Not used directly by a component. */
+  --primitive-ink-950: #0b0d0d;
+  --primitive-ink-900: #121516;
+  --primitive-ink-100: #e8e6e1;
+  --primitive-ink-400: #8b908f;
+  --primitive-ink-600: #5d6462;
+  --primitive-copper-500: #4f8a80;
+  --primitive-green-500: #4c9a72;
+  --primitive-amber-500: #b98a3c;
+  --primitive-red-500: #b5564d;
+
+  /* Tier 2 — semantics. What components use, always. */
+  --color-surface-page: var(--primitive-ink-950);
+  --color-surface-raised: var(--primitive-ink-900);
+  --color-fg-primary: var(--primitive-ink-100);
+  --color-fg-secondary: #b9bcb9;
+  --color-fg-tertiary: var(--primitive-ink-400);
+  --color-fg-muted: var(--primitive-ink-600);
+  --color-border-subtle: #23292a;
+  --color-border-strong: #39423f;
+  --color-accent: var(--primitive-copper-500);
+  --color-status-positive: var(--primitive-green-500);
+  --color-status-warning: var(--primitive-amber-500);
+  --color-status-negative: var(--primitive-red-500);
+}
+
+/* Light is the adaptation. Same token names, so no component knows. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --color-surface-page: #faf9f6;
+    --color-surface-raised: #ffffff;
+    --color-fg-primary: #14181a;
+    --color-fg-secondary: #3d4547;
+    --color-fg-tertiary: #6b7376;
+    --color-fg-muted: #949b9d;
+    --color-border-subtle: #e4e1da;
+    --color-border-strong: #c8c4ba;
+    --color-accent: #2f6b62;
+  }
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  background-color: var(--color-surface-page);
+  color: var(--color-fg-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
