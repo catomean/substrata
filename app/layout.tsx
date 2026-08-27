@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { SITE } from '@/lib/site';
 
@@ -22,7 +23,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+
+        {/* The FleetCrown feedback widget: point at what is wrong on the page,
+            and an agent changes it. Env-gated, so a local run and a fork carry
+            no widget — and if this site is ever handed to someone else, they
+            unset one variable rather than editing code. */}
+        {process.env.NEXT_PUBLIC_FC_WIDGET_TOKEN && (
+          <Script
+            src="https://fleetcrown.orangecat.ch/widget.js"
+            strategy="afterInteractive"
+            data-fc-project={process.env.NEXT_PUBLIC_FC_WIDGET_TOKEN}
+          />
+        )}
+      </body>
     </html>
   );
 }
