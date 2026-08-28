@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+/* The renderers live in the sitekit package now; Tailwind must scan them or
+   their semantic classes are never emitted. */
+@source '../node_modules/sitekit/dist';
 
 /**
  * Substrata's design tokens — the SSOT for every visual decision.
