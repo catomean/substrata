@@ -53,6 +53,7 @@ import {
   coverageProgress,
 } from './substrata-coverage';
 import type { SiteChrome, SitePage, SiteSection } from './site-content';
+import { SITE } from '../lib/site';
 
 const ROLE_LABEL: Record<string, string> = Object.fromEntries(
   PRODUCER_ROLES.map(role => [role.id, role.label])
@@ -62,6 +63,7 @@ export function substrataSiteChrome(): SiteChrome {
   return {
     name: COMPANY.name,
     tagline: COMPANY.tagline,
+    host: SITE.host,
     footerNote:
       `${COMPANY.name} publishes research. It does not trade, broker or quote, holds no ` +
       'position in anything it covers, and nothing here is an offer or investment advice. ' +

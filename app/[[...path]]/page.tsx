@@ -9,8 +9,8 @@ import {
   sitePages,
 } from '@/config/site-content';
 import { SITE } from '@/lib/site';
-import { SiteFooter, SiteMasthead } from '@/components/SiteChrome';
-import { SiteSections } from '@/components/SiteSections';
+import Link from 'next/link';
+import { SiteFooter, SiteMasthead, SiteSections } from 'sitekit/react';
 
 interface RouteParams {
   params: Promise<{ path?: string[] }>;
@@ -45,7 +45,7 @@ export default async function Page({ params }: RouteParams) {
 
   return (
     <div className="flex min-h-screen flex-col bg-surface-page">
-      <SiteMasthead chrome={chrome} navItems={siteNavItems(pages)} currentPath={currentPath} />
+      <SiteMasthead chrome={chrome} navItems={siteNavItems(pages)} currentPath={currentPath} Link={Link} />
       <main className="flex-1">
         <div className="mx-auto max-w-shell px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           {!pageRendersOwnHeader(page) && (
