@@ -8,7 +8,17 @@ export const metadata: Metadata = {
   description:
     'Open-source research on the physical chokepoints between here and a technological singularity.',
   metadataBase: new URL(`https://${SITE.host}`),
-  openGraph: { siteName: SITE.name, type: 'website' },
+  // siteName and type alone render no og:title and no og:description, so a
+  // shared link previewed with whatever the scraper could infer. Naming them
+  // explicitly is the difference between a card and a bare URL.
+  openGraph: {
+    siteName: SITE.name,
+    type: 'website',
+    title: SITE.name,
+    description:
+      'Open-source research on the physical chokepoints between here and a technological singularity.',
+  },
+  twitter: { card: 'summary_large_image', title: SITE.name },
 };
 
 /**
