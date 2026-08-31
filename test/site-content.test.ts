@@ -27,7 +27,7 @@ test('the whole site validates against the sitekit schema', () => {
 
 test('every nav item resolves to a page that exists', () => {
   const pages = sitePages();
-  const paths = new Set(pages.map(p => p.path));
+  const paths = new Set(pages.map((p) => p.path));
   for (const item of siteNavItems(pages)) {
     assert.ok(paths.has(item.path), `nav points at missing page '${item.path}'`);
   }

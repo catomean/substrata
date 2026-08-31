@@ -170,7 +170,7 @@ function p(
   jurisdictions: string[],
   role: string,
   scarcity: ScarcityGrade,
-  why: string
+  why: string,
 ): Participant {
   return { name, layer, jurisdictions, role, scarcity, why, source: null };
 }
@@ -187,7 +187,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['NO', 'US'],
     'High-purity quartz sand',
     'chokepoint',
-    'Inner-layer crucible quartz comes in practice from a very small number of deposits, and every Czochralski puller on earth needs it.'
+    'Inner-layer crucible quartz comes in practice from a very small number of deposits, and every Czochralski puller on earth needs it.',
   ),
   p(
     'Sibelco',
@@ -195,7 +195,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['BE', 'US'],
     'High-purity quartz sand',
     'chokepoint',
-    'The other holder of the same rare deposit quality. Two names deep is the whole of the upstream for this input.'
+    'The other holder of the same rare deposit quality. Two names deep is the whole of the upstream for this input.',
   ),
   p(
     'Sibanye-Stillwater',
@@ -203,7 +203,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['ZA'],
     'PGM mining incl. ruthenium',
     'concentrated',
-    'Ruthenium is a by-product, so its supply is set by platinum economics rather than by demand for it.'
+    'Ruthenium is a by-product, so its supply is set by platinum economics rather than by demand for it.',
   ),
   p(
     'Impala Platinum',
@@ -211,7 +211,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['ZA'],
     'PGM mining',
     'concentrated',
-    'Same by-product logic, same narrow geography.'
+    'Same by-product logic, same narrow geography.',
   ),
   p(
     'Nornickel',
@@ -219,7 +219,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['RU'],
     'Nickel and PGM mining',
     'concentrated',
-    'Material share of world PGM and nickel, with sanctions risk layered on top of geology.'
+    'Material share of world PGM and nickel, with sanctions risk layered on top of geology.',
   ),
   p(
     'MP Materials',
@@ -227,7 +227,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Rare-earth ore',
     'concentrated',
-    'The main non-Chinese light rare-earth mine. Mining diversified before separation did, which is the gap the map cares about.'
+    'The main non-Chinese light rare-earth mine. Mining diversified before separation did, which is the gap the map cares about.',
   ),
   p(
     'Lynas Rare Earths',
@@ -235,7 +235,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['AU', 'MY'],
     'Rare-earth mining and separation',
     'concentrated',
-    'The most complete non-Chinese rare-earth chain, and still small against the incumbent.'
+    'The most complete non-Chinese rare-earth chain, and still small against the incumbent.',
   ),
   p(
     'Yunnan Tin',
@@ -243,7 +243,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CN'],
     'Tin mining and smelting',
     'concentrated',
-    'Large in tin metal; the EUV-grade constraint sits downstream of it.'
+    'Large in tin metal; the EUV-grade constraint sits downstream of it.',
   ),
   p(
     'Minsur',
@@ -251,7 +251,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['PE'],
     'Tin mining and smelting',
     'competitive',
-    'Tin metal has several credible producers. It is purity, not tonnage, that binds here.'
+    'Tin metal has several credible producers. It is purity, not tonnage, that binds here.',
   ),
   p(
     'PT Timah',
@@ -259,7 +259,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['ID'],
     'Tin mining and smelting',
     'competitive',
-    'Same: the scarcity in this chain is an upgrading step, not an ore body.'
+    'Same: the scarcity in this chain is an upgrading step, not an ore body.',
   ),
   p(
     'QatarEnergy',
@@ -267,7 +267,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['QA'],
     'Helium from LNG',
     'concentrated',
-    'Helium exists commercially only as a by-product of a few gas fields with unusual composition.'
+    'Helium exists commercially only as a by-product of a few gas fields with unusual composition.',
   ),
   p(
     'ExxonMobil',
@@ -275,7 +275,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Helium from natural gas',
     'concentrated',
-    'One of a very small number of fields worldwide rich enough to justify extraction.'
+    'One of a very small number of fields worldwide rich enough to justify extraction.',
   ),
 
   // ---------------- Refining & separation ----------------
@@ -285,7 +285,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DE', 'US'],
     'Electronic-grade polysilicon',
     'chokepoint',
-    'Solar-grade polysilicon has many producers; electronic-grade has very few, and the gap is orders of magnitude of impurity.'
+    'Solar-grade polysilicon has many producers; electronic-grade has very few, and the gap is orders of magnitude of impurity.',
   ),
   p(
     'Hemlock Semiconductor',
@@ -293,7 +293,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Electronic-grade polysilicon',
     'chokepoint',
-    'One of a handful of qualified suppliers of the first material in the entire chain.'
+    'One of a handful of qualified suppliers of the first material in the entire chain.',
   ),
   p(
     'Tokuyama',
@@ -301,7 +301,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP', 'MY'],
     'Electronic-grade polysilicon',
     'chokepoint',
-    'Same short list, different geography — which is most of why it matters.'
+    'Same short list, different geography — which is most of why it matters.',
   ),
   p(
     'OCI',
@@ -309,7 +309,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['KR', 'MY'],
     'Polysilicon',
     'concentrated',
-    'Credible at scale, with electronic-grade a narrower qualification than volume implies.'
+    'Credible at scale, with electronic-grade a narrower qualification than volume implies.',
   ),
   p(
     'China Northern Rare Earth',
@@ -317,7 +317,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CN'],
     'Rare-earth separation',
     'chokepoint',
-    'Separation, not mining, is where the rare-earth chain actually narrows, and it narrows here.'
+    'Separation, not mining, is where the rare-earth chain actually narrows, and it narrows here.',
   ),
   p(
     'Shenghe Resources',
@@ -325,7 +325,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CN'],
     'Rare-earth separation and trading',
     'chokepoint',
-    'Processes feedstock from mines all over the world, including ones marketed as diversification.'
+    'Processes feedstock from mines all over the world, including ones marketed as diversification.',
   ),
   p(
     'Chinalco',
@@ -333,7 +333,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CN'],
     'Gallium from alumina refining',
     'chokepoint',
-    'Gallium is an alumina by-product, so supply cannot answer price — and it is export-controlled.'
+    'Gallium is an alumina by-product, so supply cannot answer price — and it is export-controlled.',
   ),
   p(
     'Heraeus',
@@ -341,7 +341,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DE'],
     'Precious-metal refining',
     'concentrated',
-    'One of the few refiners able to deliver PGMs at semiconductor purity.'
+    'One of the few refiners able to deliver PGMs at semiconductor purity.',
   ),
   p(
     'Johnson Matthey',
@@ -349,7 +349,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['GB'],
     'PGM refining',
     'concentrated',
-    'Long-established PGM chemistry; a short list of peers worldwide.'
+    'Long-established PGM chemistry; a short list of peers worldwide.',
   ),
   p(
     'Umicore',
@@ -357,7 +357,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['BE'],
     'PGM refining and recycling',
     'concentrated',
-    'Secondary supply is often the only elastic source in these metals.'
+    'Secondary supply is often the only elastic source in these metals.',
   ),
   p(
     'Linde',
@@ -365,7 +365,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['GB', 'US', 'DE'],
     'Industrial and electronic gases',
     'concentrated',
-    'Noble gases come from air separation attached to heavy industry, which limits where they can come from at all.'
+    'Noble gases come from air separation attached to heavy industry, which limits where they can come from at all.',
   ),
   p(
     'Air Liquide',
@@ -373,7 +373,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['FR'],
     'Industrial and electronic gases',
     'concentrated',
-    'One of three global gas majors; the fab-qualified end is narrower than the industrial one.'
+    'One of three global gas majors; the fab-qualified end is narrower than the industrial one.',
   ),
   p(
     'Air Products',
@@ -381,7 +381,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Industrial gases and helium',
     'concentrated',
-    'Helium distribution is a small club with long-dated source contracts.'
+    'Helium distribution is a small club with long-dated source contracts.',
   ),
   p(
     'Iceblick',
@@ -389,7 +389,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['UA'],
     'Neon and rare gases',
     'concentrated',
-    'The 2022 squeeze made the point: an industrial-gas map and a war map turned out to be the same map.'
+    'The 2022 squeeze made the point: an industrial-gas map and a war map turned out to be the same map.',
   ),
   p(
     '5N Plus',
@@ -397,7 +397,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CA', 'DE'],
     'High-purity specialty metals',
     'concentrated',
-    'Upgrading to five nines and beyond is a different business from producing the metal.'
+    'Upgrading to five nines and beyond is a different business from producing the metal.',
   ),
 
   // ---------------- Conversion ----------------
@@ -407,7 +407,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     '300 mm prime silicon wafers',
     'chokepoint',
-    'Five firms supply essentially all prime 300 mm capacity, and qualification at a leading-edge fab takes years.'
+    'Five firms supply essentially all prime 300 mm capacity, and qualification at a leading-edge fab takes years.',
   ),
   p(
     'SUMCO',
@@ -415,7 +415,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     '300 mm prime silicon wafers',
     'chokepoint',
-    'The other half of a duopoly at the top of the wafer market.'
+    'The other half of a duopoly at the top of the wafer market.',
   ),
   p(
     'GlobalWafers',
@@ -423,7 +423,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['TW'],
     'Silicon wafers',
     'concentrated',
-    'Third of the big five, with a genuine multi-region footprint.'
+    'Third of the big five, with a genuine multi-region footprint.',
   ),
   p(
     'Siltronic',
@@ -431,7 +431,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DE'],
     'Silicon wafers',
     'concentrated',
-    'European supply of an input with almost no European alternative.'
+    'European supply of an input with almost no European alternative.',
   ),
   p(
     'SK Siltron',
@@ -439,7 +439,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['KR'],
     'Silicon and SiC wafers',
     'concentrated',
-    'Captive-adjacent to Korean memory, and one of few SiC entrants at scale.'
+    'Captive-adjacent to Korean memory, and one of few SiC entrants at scale.',
   ),
   p(
     'Momentive Technologies',
@@ -447,7 +447,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Fused quartz crucibles',
     'chokepoint',
-    'Turning rare sand into a crucible that survives a pull is knowledge held in very few places.'
+    'Turning rare sand into a crucible that survives a pull is knowledge held in very few places.',
   ),
   p(
     'Shin-Etsu Quartz',
@@ -455,7 +455,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Fused quartz components',
     'chokepoint',
-    'Same step, same shortness of the list.'
+    'Same step, same shortness of the list.',
   ),
   p(
     'Ferrotec',
@@ -463,7 +463,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP', 'CN'],
     'Quartz and fab consumables',
     'concentrated',
-    'Broad consumables base spanning both sides of an export-control line.'
+    'Broad consumables base spanning both sides of an export-control line.',
   ),
   p(
     'Element Six',
@@ -471,7 +471,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['GB', 'IE'],
     'CVD synthetic diamond',
     'concentrated',
-    'Reactor time, not raw material, is the constraint on optical-grade diamond.'
+    'Reactor time, not raw material, is the constraint on optical-grade diamond.',
   ),
   p(
     'Coherent',
@@ -479,7 +479,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'SiC substrates, diamond, photonics',
     'concentrated',
-    'One of the few firms present in several of this chain’s narrow materials at once.'
+    'One of the few firms present in several of this chain’s narrow materials at once.',
   ),
   p(
     'Wolfspeed',
@@ -487,7 +487,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Silicon carbide substrates',
     'concentrated',
-    'The 150 to 200 mm transition resets everyone’s yield curve, which is where the scarcity currently lives.'
+    'The 150 to 200 mm transition resets everyone’s yield curve, which is where the scarcity currently lives.',
   ),
   p(
     'Resonac',
@@ -495,7 +495,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'SiC epitaxy and fab materials',
     'concentrated',
-    'Deep in the materials nobody outside the industry can name.'
+    'Deep in the materials nobody outside the industry can name.',
   ),
   p(
     'Fujikura',
@@ -503,7 +503,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'REBCO superconducting tape',
     'concentrated',
-    'A single high-field magnet consumes tape by the kilometre against a small world output.'
+    'A single high-field magnet consumes tape by the kilometre against a small world output.',
   ),
   p(
     'Faraday Factory Japan',
@@ -511,7 +511,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'REBCO superconducting tape',
     'concentrated',
-    'One of the very few able to ship fusion-programme quantities at all.'
+    'One of the very few able to ship fusion-programme quantities at all.',
   ),
   p(
     'Neo Performance Materials',
@@ -519,7 +519,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CA', 'EE'],
     'Rare-earth magnets and materials',
     'concentrated',
-    'The main non-Chinese magnet-making capacity outside Japan, and small against demand.'
+    'The main non-Chinese magnet-making capacity outside Japan, and small against demand.',
   ),
   p(
     'Less Common Metals',
@@ -527,7 +527,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['GB'],
     'Rare-earth alloys and strip',
     'chokepoint',
-    'A tiny specialist standing between Western separated oxide and a finished magnet.'
+    'A tiny specialist standing between Western separated oxide and a finished magnet.',
   ),
   p(
     'Nippon Steel',
@@ -535,7 +535,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Grain-oriented electrical steel',
     'concentrated',
-    'Transformer cores are made on a small number of qualified lines worldwide.'
+    'Transformer cores are made on a small number of qualified lines worldwide.',
   ),
   p(
     'POSCO',
@@ -543,7 +543,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['KR'],
     'Grain-oriented electrical steel',
     'concentrated',
-    'Same short list, and the same multi-year lead times downstream.'
+    'Same short list, and the same multi-year lead times downstream.',
   ),
   p(
     'Indium Corporation',
@@ -551,7 +551,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'High-purity metals and solders',
     'concentrated',
-    'Seven-nines upgrading is a specialist step with few qualified providers.'
+    'Seven-nines upgrading is a specialist step with few qualified providers.',
   ),
 
   // ---------------- Equipment & consumables ----------------
@@ -561,7 +561,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['NL'],
     'EUV and DUV lithography systems',
     'chokepoint',
-    'One company on earth builds EUV, the queue runs to years, and no second source is in progress.'
+    'One company on earth builds EUV, the queue runs to years, and no second source is in progress.',
   ),
   p(
     'Carl Zeiss SMT',
@@ -569,7 +569,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DE'],
     'EUV projection optics',
     'chokepoint',
-    'A chokepoint inside a chokepoint: the mirrors are polished to a tolerance one supplier has ever achieved.'
+    'A chokepoint inside a chokepoint: the mirrors are polished to a tolerance one supplier has ever achieved.',
   ),
   p(
     'Trumpf',
@@ -577,7 +577,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DE'],
     'EUV plasma-source lasers',
     'chokepoint',
-    'The drive laser is as single-sourced as the scanner it sits inside.'
+    'The drive laser is as single-sourced as the scanner it sits inside.',
   ),
   p(
     'Applied Materials',
@@ -585,7 +585,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Deposition, etch and process tools',
     'concentrated',
-    'Broadest tool portfolio, with several steps where it is effectively the only qualified option.'
+    'Broadest tool portfolio, with several steps where it is effectively the only qualified option.',
   ),
   p(
     'Lam Research',
@@ -593,7 +593,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Etch and deposition',
     'concentrated',
-    'High-aspect-ratio etch for 3D memory is a narrow specialism.'
+    'High-aspect-ratio etch for 3D memory is a narrow specialism.',
   ),
   p(
     'Tokyo Electron',
@@ -601,7 +601,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Coaters, developers, etch',
     'concentrated',
-    'Track systems pair with lithography and are qualified alongside it.'
+    'Track systems pair with lithography and are qualified alongside it.',
   ),
   p(
     'KLA',
@@ -609,7 +609,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Process control and metrology',
     'concentrated',
-    'You cannot yield what you cannot measure, and few can measure at this scale.'
+    'You cannot yield what you cannot measure, and few can measure at this scale.',
   ),
   p(
     'ASM International',
@@ -617,7 +617,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['NL'],
     'Atomic layer deposition',
     'concentrated',
-    'ALD became unavoidable as devices went vertical, on a short supplier list.'
+    'ALD became unavoidable as devices went vertical, on a short supplier list.',
   ),
   p(
     'JSR',
@@ -625,7 +625,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Photoresists',
     'chokepoint',
-    'Resist chemistry is qualified per process per fab; substituting one is a programme, not a purchase.'
+    'Resist chemistry is qualified per process per fab; substituting one is a programme, not a purchase.',
   ),
   p(
     'Tokyo Ohka Kogyo',
@@ -633,7 +633,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Photoresists and process chemicals',
     'chokepoint',
-    'The same Japanese concentration that made resist an export-control talking point.'
+    'The same Japanese concentration that made resist an export-control talking point.',
   ),
   p(
     'Shin-Etsu Chemical',
@@ -641,7 +641,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Photoresists, masks and silicones',
     'chokepoint',
-    'Present at several narrow points of this chain simultaneously.'
+    'Present at several narrow points of this chain simultaneously.',
   ),
   p(
     'Nikon',
@@ -649,7 +649,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Lithography systems',
     'competitive',
-    'Credible in mature-node lithography, and not a factor at the leading edge — which is what "competitive" means here.'
+    'Credible in mature-node lithography, and not a factor at the leading edge — which is what "competitive" means here.',
   ),
   p(
     'Canon',
@@ -657,7 +657,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Lithography and nanoimprint',
     'competitive',
-    'An alternative path that has not yet displaced anything at volume.'
+    'An alternative path that has not yet displaced anything at volume.',
   ),
 
   // ---------------- Fabrication ----------------
@@ -667,7 +667,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['TW'],
     'Leading-edge foundry',
     'chokepoint',
-    'A handful of fabs can run the newest node at volume, and one of them runs most of it.'
+    'A handful of fabs can run the newest node at volume, and one of them runs most of it.',
   ),
   p(
     'Samsung Foundry',
@@ -675,7 +675,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['KR'],
     'Leading-edge foundry and memory',
     'concentrated',
-    'The only other merchant foundry credibly at the leading edge.'
+    'The only other merchant foundry credibly at the leading edge.',
   ),
   p(
     'Intel Foundry',
@@ -683,7 +683,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US', 'IE', 'IL'],
     'Leading-edge foundry',
     'concentrated',
-    'The main non-Asian leading-edge option, and the reason several policy programmes exist.'
+    'The main non-Asian leading-edge option, and the reason several policy programmes exist.',
   ),
   p(
     'SMIC',
@@ -691,7 +691,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CN'],
     'Foundry',
     'concentrated',
-    'Domestic Chinese capacity operating under equipment restrictions — the constraint is imported, not technical.'
+    'Domestic Chinese capacity operating under equipment restrictions — the constraint is imported, not technical.',
   ),
   p(
     'GlobalFoundries',
@@ -699,7 +699,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US', 'DE', 'SG'],
     'Mature and specialty nodes',
     'competitive',
-    'Mature-node capacity is genuinely contested, which is exactly why it is not where the chain binds.'
+    'Mature-node capacity is genuinely contested, which is exactly why it is not where the chain binds.',
   ),
   p(
     'UMC',
@@ -707,7 +707,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['TW'],
     'Mature-node foundry',
     'competitive',
-    'Same: plenty of credible suppliers at these nodes.'
+    'Same: plenty of credible suppliers at these nodes.',
   ),
 
   // ---------------- Packaging & memory ----------------
@@ -717,7 +717,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['TW'],
     'CoWoS-class packaging',
     'chokepoint',
-    'Accelerator output is gated by packaging slots, not wafer starts, and they are allocated years ahead.'
+    'Accelerator output is gated by packaging slots, not wafer starts, and they are allocated years ahead.',
   ),
   p(
     'ASE Technology',
@@ -725,7 +725,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['TW'],
     'Assembly and test',
     'concentrated',
-    'The largest OSAT, moving up into advanced packaging as demand overflows.'
+    'The largest OSAT, moving up into advanced packaging as demand overflows.',
   ),
   p(
     'Amkor',
@@ -733,7 +733,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US', 'KR'],
     'Assembly and test',
     'concentrated',
-    'The main non-Taiwanese OSAT of scale, and a policy favourite for that reason.'
+    'The main non-Taiwanese OSAT of scale, and a policy favourite for that reason.',
   ),
   p(
     'SK hynix',
@@ -741,7 +741,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['KR'],
     'High-bandwidth memory',
     'chokepoint',
-    'HBM stacking yield is knowledge that does not transfer when a competitor buys the same equipment.'
+    'HBM stacking yield is knowledge that does not transfer when a competitor buys the same equipment.',
   ),
   p(
     'Micron',
@@ -749,7 +749,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US', 'JP', 'SG'],
     'High-bandwidth memory',
     'concentrated',
-    'One of three, and the only one headquartered outside Korea.'
+    'One of three, and the only one headquartered outside Korea.',
   ),
   p(
     'Samsung Memory',
@@ -757,7 +757,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['KR'],
     'High-bandwidth memory',
     'concentrated',
-    'Enormous capacity, with qualification at the top of the HBM range a separate question from volume.'
+    'Enormous capacity, with qualification at the top of the HBM range a separate question from volume.',
   ),
 
   // ---------------- Systems & silicon ----------------
@@ -767,7 +767,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Accelerators and interconnect',
     'chokepoint',
-    'The constraint is not only silicon: the software estate around it is what makes substitution slow even where alternatives exist.'
+    'The constraint is not only silicon: the software estate around it is what makes substitution slow even where alternatives exist.',
   ),
   p(
     'AMD',
@@ -775,7 +775,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Accelerators and CPUs',
     'concentrated',
-    'The credible merchant alternative, gated by the same packaging and memory as everyone else.'
+    'The credible merchant alternative, gated by the same packaging and memory as everyone else.',
   ),
   p(
     'Broadcom',
@@ -783,7 +783,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Custom accelerators and networking silicon',
     'concentrated',
-    'Most large in-house accelerator programmes run through a very short list of design partners.'
+    'Most large in-house accelerator programmes run through a very short list of design partners.',
   ),
   p(
     'Marvell',
@@ -791,7 +791,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Custom silicon, optics and interconnect',
     'concentrated',
-    'The other name on that short list.'
+    'The other name on that short list.',
   ),
   p(
     'Vertiv',
@@ -799,7 +799,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Datacentre power and thermal systems',
     'concentrated',
-    'Rack-level power and cooling became a constraint the moment density outran air.'
+    'Rack-level power and cooling became a constraint the moment density outran air.',
   ),
   p(
     'Arista Networks',
@@ -807,7 +807,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Datacentre networking',
     'competitive',
-    'Several credible suppliers of high-speed switching, and merchant silicon underneath most of them.'
+    'Several credible suppliers of high-speed switching, and merchant silicon underneath most of them.',
   ),
   p(
     'Supermicro',
@@ -815,7 +815,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US', 'TW'],
     'Server systems integration',
     'competitive',
-    'Integration capacity is contested; the parts going into it are not.'
+    'Integration capacity is contested; the parts going into it are not.',
   ),
 
   // ---------------- Energy & grid ----------------
@@ -825,7 +825,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CH', 'JP'],
     'Transformers, HVDC, grid equipment',
     'chokepoint',
-    'Large power transformers run to multi-year lead times, and a datacentre cannot be energised without one.'
+    'Large power transformers run to multi-year lead times, and a datacentre cannot be energised without one.',
   ),
   p(
     'Siemens Energy',
@@ -833,7 +833,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DE'],
     'Grid equipment and turbines',
     'chokepoint',
-    'Order books for both halves of the energisation problem are effectively spoken for.'
+    'Order books for both halves of the energisation problem are effectively spoken for.',
   ),
   p(
     'GE Vernova',
@@ -841,7 +841,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Gas turbines and grid equipment',
     'chokepoint',
-    'The fastest route to firm power at scale, sold out well into the future.'
+    'The fastest route to firm power at scale, sold out well into the future.',
   ),
   p(
     'Prysmian',
@@ -849,7 +849,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['IT'],
     'High-voltage cable',
     'concentrated',
-    'The unglamorous half of energisation, with the same inability to answer a demand shock quickly.'
+    'The unglamorous half of energisation, with the same inability to answer a demand shock quickly.',
   ),
   p(
     'NKT',
@@ -857,7 +857,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DK'],
     'High-voltage cable',
     'concentrated',
-    'A short list of firms able to make and lay HV cable at all.'
+    'A short list of firms able to make and lay HV cable at all.',
   ),
   p(
     'Schneider Electric',
@@ -865,7 +865,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['FR'],
     'Electrical distribution and datacentre power',
     'concentrated',
-    'Switchgear and distribution have deepened into a constraint alongside transformers.'
+    'Switchgear and distribution have deepened into a constraint alongside transformers.',
   ),
   p(
     'ABB',
@@ -873,7 +873,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CH'],
     'Electrification and drives',
     'concentrated',
-    'Present on both the power and the motion side of this chain.'
+    'Present on both the power and the motion side of this chain.',
   ),
   p(
     'Mitsubishi Electric',
@@ -881,7 +881,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Transformers and power electronics',
     'concentrated',
-    'One of the few transformer makers with capacity outside Europe and the US.'
+    'One of the few transformer makers with capacity outside Europe and the US.',
   ),
 
   // ---------------- Actuation & robotics ----------------
@@ -891,7 +891,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Strain-wave reduction gears',
     'chokepoint',
-    'Precision drives set what a robot joint can do, and the tolerances are decades of accumulated practice.'
+    'Precision drives set what a robot joint can do, and the tolerances are decades of accumulated practice.',
   ),
   p(
     'Nabtesco',
@@ -899,7 +899,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Cycloidal reduction gears',
     'chokepoint',
-    'The other half of a duopoly that quietly gates humanoid and industrial robotics alike.'
+    'The other half of a duopoly that quietly gates humanoid and industrial robotics alike.',
   ),
   p(
     'FANUC',
@@ -907,7 +907,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Industrial robots and CNC',
     'concentrated',
-    'Vertically integrated down to its own drives and controls, which is itself the moat.'
+    'Vertically integrated down to its own drives and controls, which is itself the moat.',
   ),
   p(
     'Yaskawa',
@@ -915,7 +915,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['JP'],
     'Servo motors and robots',
     'concentrated',
-    'Servo and drive expertise that new entrants consistently underestimate.'
+    'Servo and drive expertise that new entrants consistently underestimate.',
   ),
   p(
     'ABB Robotics',
@@ -923,7 +923,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['CH', 'SE'],
     'Industrial robots',
     'concentrated',
-    'One of a small number of full-line robot makers worldwide.'
+    'One of a small number of full-line robot makers worldwide.',
   ),
   p(
     'Renishaw',
@@ -931,7 +931,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['GB'],
     'Encoders and metrology',
     'concentrated',
-    'Closing the control loop precisely is a narrow specialism.'
+    'Closing the control loop precisely is a narrow specialism.',
   ),
   p(
     'KUKA',
@@ -939,7 +939,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['DE', 'CN'],
     'Industrial robots',
     'competitive',
-    'Robot assembly is contested; the drives inside are where the scarcity sits.'
+    'Robot assembly is contested; the drives inside are where the scarcity sits.',
   ),
 
   // ---------------- Deployment & demand ----------------
@@ -949,7 +949,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Hyperscale compute buyer',
     'concentrated',
-    'On the demand side the grade reads the other way: a handful of buyers account for most of the world’s accelerator orders.'
+    'On the demand side the grade reads the other way: a handful of buyers account for most of the world’s accelerator orders.',
   ),
   p(
     'Amazon Web Services',
@@ -957,7 +957,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Hyperscale compute buyer and custom silicon',
     'concentrated',
-    'Buys at a scale that moves supply, and designs around it where it can.'
+    'Buys at a scale that moves supply, and designs around it where it can.',
   ),
   p(
     'Google',
@@ -965,7 +965,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Hyperscale compute buyer and custom silicon',
     'concentrated',
-    'The longest-running in-house accelerator programme, and still bound by the same packaging.'
+    'The longest-running in-house accelerator programme, and still bound by the same packaging.',
   ),
   p(
     'Meta',
@@ -973,7 +973,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Hyperscale compute buyer',
     'concentrated',
-    'Among the largest single sources of demand for everything upstream of it.'
+    'Among the largest single sources of demand for everything upstream of it.',
   ),
   p(
     'OpenAI',
@@ -981,7 +981,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Frontier model developer',
     'concentrated',
-    'Demand large enough to be a planning input for several layers above it in this list.'
+    'Demand large enough to be a planning input for several layers above it in this list.',
   ),
   p(
     'Anthropic',
@@ -989,7 +989,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Frontier model developer',
     'concentrated',
-    'Same: frontier training demand is concentrated in very few organisations.'
+    'Same: frontier training demand is concentrated in very few organisations.',
   ),
   p(
     'xAI',
@@ -997,7 +997,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Frontier model developer',
     'concentrated',
-    'Notable for building its own power and datacentre capacity to get around the queues.'
+    'Notable for building its own power and datacentre capacity to get around the queues.',
   ),
   p(
     'CoreWeave',
@@ -1005,7 +1005,7 @@ export const PARTICIPANTS: readonly Participant[] = [
     ['US'],
     'Specialist compute provider',
     'competitive',
-    'Neocloud capacity is contested and growing — the constraint is what they buy, not what they sell.'
+    'Neocloud capacity is contested and growing — the constraint is what they buy, not what they sell.',
   ),
 ];
 
@@ -1023,23 +1023,23 @@ export interface ParticipantProgress {
 }
 
 export function participantProgress(): ParticipantProgress {
-  const grade = (g: ScarcityGrade) => PARTICIPANTS.filter(item => item.scarcity === g).length;
+  const grade = (g: ScarcityGrade) => PARTICIPANTS.filter((item) => item.scarcity === g).length;
   return {
     total: PARTICIPANTS.length,
-    sourced: PARTICIPANTS.filter(item => item.source !== null).length,
+    sourced: PARTICIPANTS.filter((item) => item.source !== null).length,
     chokepoints: grade('chokepoint'),
     concentrated: grade('concentrated'),
     competitive: grade('competitive'),
-    jurisdictions: new Set(PARTICIPANTS.flatMap(item => item.jurisdictions)).size,
+    jurisdictions: new Set(PARTICIPANTS.flatMap((item) => item.jurisdictions)).size,
   };
 }
 
 /** Participants in one layer, in the order they were written. */
 export function participantsInLayer(layer: ChainLayer): Participant[] {
-  return PARTICIPANTS.filter(item => item.layer === layer);
+  return PARTICIPANTS.filter((item) => item.layer === layer);
 }
 
 /** Every participant graded a hard constraint — the point of the exercise. */
 export function bindingParticipants(): Participant[] {
-  return PARTICIPANTS.filter(item => item.scarcity === 'chokepoint');
+  return PARTICIPANTS.filter((item) => item.scarcity === 'chokepoint');
 }

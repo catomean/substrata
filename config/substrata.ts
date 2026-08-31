@@ -41,8 +41,6 @@ export const COMPANY = {
   tagline: 'The chokepoints between here and the singularity, written down in public.',
 } as const;
 
-
-
 // =====================================================================
 // OWNERSHIP
 // =====================================================================
@@ -528,7 +526,7 @@ export // =====================================================================
 
 const AREA_BY_ID: Record<AreaId, CoverageArea> = COVERAGE_AREAS.reduce(
   (acc, area) => ({ ...acc, [area.id]: area }),
-  {} as Record<AreaId, CoverageArea>
+  {} as Record<AreaId, CoverageArea>,
 );
 
 /** @returns the coverage area a material belongs to. */
