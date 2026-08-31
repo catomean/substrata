@@ -21,7 +21,7 @@ interface RouteParams {
  * adding one is a config entry, never a new route file.
  */
 export function generateStaticParams(): Array<{ path?: string[] }> {
-  return sitePages().map(page => ({ path: page.path ? [page.path] : [] }));
+  return sitePages().map((page) => ({ path: page.path ? [page.path] : [] }));
 }
 
 export async function generateMetadata({ params }: RouteParams): Promise<Metadata> {
@@ -45,7 +45,12 @@ export default async function Page({ params }: RouteParams) {
 
   return (
     <div className="flex min-h-screen flex-col bg-surface-page">
-      <SiteMasthead chrome={chrome} navItems={siteNavItems(pages)} currentPath={currentPath} Link={Link} />
+      <SiteMasthead
+        chrome={chrome}
+        navItems={siteNavItems(pages)}
+        currentPath={currentPath}
+        Link={Link}
+      />
       <main className="flex-1">
         <div className="mx-auto max-w-shell px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
           {!pageRendersOwnHeader(page) && (

@@ -349,8 +349,8 @@ export interface ReadinessProgress {
 export function readinessProgress(): ReadinessProgress {
   return {
     total: READINESS.length,
-    done: READINESS.filter(item => item.status === 'done').length,
-    inProgress: READINESS.filter(item => item.status === 'in-progress').length,
+    done: READINESS.filter((item) => item.status === 'done').length,
+    inProgress: READINESS.filter((item) => item.status === 'in-progress').length,
   };
 }
 

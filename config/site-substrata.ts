@@ -56,7 +56,7 @@ import type { SiteChrome, SitePage, SiteSection } from './site-content';
 import { SITE } from '../lib/site';
 
 const ROLE_LABEL: Record<string, string> = Object.fromEntries(
-  PRODUCER_ROLES.map(role => [role.id, role.label])
+  PRODUCER_ROLES.map((role) => [role.id, role.label]),
 );
 
 export function substrataSiteChrome(): SiteChrome {
@@ -77,8 +77,8 @@ export function substrataSiteChrome(): SiteChrome {
 
 function homePage(): SitePage {
   const progress = coverageProgress();
-  const activePhases = PHASES.filter(phase => phase.status === 'active');
-  const companies = new Set(COVERAGE.flatMap(entry => entry.producers.map(p => p.name))).size;
+  const activePhases = PHASES.filter((phase) => phase.status === 'active');
+  const companies = new Set(COVERAGE.flatMap((entry) => entry.producers.map((p) => p.name))).size;
 
   return {
     path: '',
@@ -136,7 +136,7 @@ function homePage(): SitePage {
           'A node enters coverage, or the book, only if it passes both. Failing either is a ' +
           'decline — and we decline every week.',
         columns: 3,
-        cards: MANDATE_CURVES.map(curve => ({
+        cards: MANDATE_CURVES.map((curve) => ({
           title: curve.label,
           body: curve.detail,
           meta: curve.test,
@@ -146,7 +146,7 @@ function homePage(): SitePage {
         kind: 'definitions',
         heading: 'The chokepoint screen',
         blurb: EXCLUSION_RULE.rule,
-        items: CHOKEPOINT_TEST.map(factor => ({
+        items: CHOKEPOINT_TEST.map((factor) => ({
           term: factor.question,
           detail: factor.detail,
         })),
@@ -157,7 +157,7 @@ function homePage(): SitePage {
         blurb:
           'Two phases at once. A desk is not one of them — see Disclosure for what this ' +
           'firm does and does not do.',
-        items: activePhases.map(phase => ({ term: phase.label, detail: phase.detail })),
+        items: activePhases.map((phase) => ({ term: phase.label, detail: phase.detail })),
       },
     ],
   };
@@ -179,7 +179,7 @@ function mandatePage(): SitePage {
         kind: 'cards',
         heading: 'Three curves',
         columns: 3,
-        cards: MANDATE_CURVES.map(curve => ({
+        cards: MANDATE_CURVES.map((curve) => ({
           title: curve.label,
           body: curve.detail,
           meta: curve.test,
@@ -191,7 +191,7 @@ function mandatePage(): SitePage {
         blurb:
           'Being on a curve is not enough. Most of a supply chain is substitutable, and ' +
           'therefore uninteresting. A node earns coverage when it gates a curve.',
-        items: CHOKEPOINT_TEST.map(factor => ({ term: factor.question, detail: factor.detail })),
+        items: CHOKEPOINT_TEST.map((factor) => ({ term: factor.question, detail: factor.detail })),
       },
       {
         kind: 'cards',
@@ -201,14 +201,14 @@ function mandatePage(): SitePage {
           'reaches robotics, AI hardware and additive manufacturing without becoming ' +
           '“everything”: you arrive at them by tracing a chain you were already mapping.',
         columns: 3,
-        cards: NODE_TYPES.map(node => ({ title: node.label, body: node.detail })),
+        cards: NODE_TYPES.map((node) => ({ title: node.label, body: node.detail })),
       },
       {
         kind: 'definitions',
         heading: 'Sequence',
         blurb:
           'Research first, because it costs nothing but attention and it is the sourcing work the desk needs anyway.',
-        items: PHASES.map(phase => ({
+        items: PHASES.map((phase) => ({
           term: `${phase.label}${phase.status === 'active' ? ' — active' : ''}`,
           detail: phase.detail,
         })),
@@ -235,9 +235,9 @@ function mapPage(): SitePage {
   // The material's own research — why it gates, and which grade actually ships
   // — used to live on the desk page. With no desk there is no desk page, and
   // that content belongs here anyway: it is research, not a product listing.
-  const materialById = new Map(MATERIALS.map(material => [material.title, material]));
+  const materialById = new Map(MATERIALS.map((material) => [material.title, material]));
 
-  const materialTables: SiteSection[] = COVERAGE.map(entry => {
+  const materialTables: SiteSection[] = COVERAGE.map((entry) => {
     const material = materialById.get(entry.material);
     return {
       kind: 'table' as const,
@@ -251,7 +251,7 @@ function mapPage(): SitePage {
       // across a row — mono keeps them aligned and comparable.
       monoColumns: [1],
       statusColumn: 3,
-      rows: entry.producers.map(producer => [
+      rows: entry.producers.map((producer) => [
         producer.name,
         producer.jurisdictions.join(' '),
         ROLE_LABEL[producer.role] ?? producer.role,
@@ -294,7 +294,7 @@ function mapPage(): SitePage {
         kind: 'index',
         heading: 'Materials',
         blurb: 'Fifteen chokepoints. The number beside each is how many producers are mapped.',
-        entries: COVERAGE.map(entry => ({
+        entries: COVERAGE.map((entry) => ({
           label: entry.material,
           meta: String(entry.producers.length),
           anchor: materialAnchor(entry.material),
@@ -315,12 +315,12 @@ function chokepointsPage(): SitePage {
   // Cards, not a table. A table of names and country codes scans nicely and
   // says nothing — the claim IS the reason it gates, and a research page that
   // hides its reasoning behind a tidy grid has published a list, not research.
-  const byCurve = MANDATE_CURVES.map(curve => ({
+  const byCurve = MANDATE_CURVES.map((curve) => ({
     kind: 'cards' as const,
     heading: curve.label,
     blurb: curve.detail,
     columns: 2 as const,
-    cards: CHOKEPOINTS.filter(point => point.curve === curve.id).map(point => ({
+    cards: CHOKEPOINTS.filter((point) => point.curve === curve.id).map((point) => ({
       title: point.name,
       body: point.why,
       meta: [
@@ -362,7 +362,7 @@ function chokepointsPage(): SitePage {
           { label: 'Non-material chokepoints', value: String(progress.total) },
           {
             label: 'Kinds of node',
-            value: String(new Set(CHOKEPOINTS.map(point => point.type)).size),
+            value: String(new Set(CHOKEPOINTS.map((point) => point.type)).size),
             note: 'Machines, processes, companies and people.',
           },
         ],
@@ -404,7 +404,7 @@ function thesisPage(): SitePage {
             'circumstances — see Acting on it for what that does and does not permit.',
         ],
       },
-      ...INVESTMENT_THESIS.map(claim => ({
+      ...INVESTMENT_THESIS.map((claim) => ({
         kind: 'definitions' as const,
         heading: claim.claim,
         blurb: claim.detail,
@@ -422,7 +422,7 @@ function participantsPage(): SitePage {
   const progress = participantProgress();
   const binding = bindingParticipants();
 
-  const layerTables: SiteSection[] = CHAIN_LAYERS.flatMap(layer => {
+  const layerTables: SiteSection[] = CHAIN_LAYERS.flatMap((layer) => {
     const rows = participantsInLayer(layer.id);
     if (rows.length === 0) {
       return [];
@@ -436,7 +436,7 @@ function participantsPage(): SitePage {
         columns: ['Participant', 'Role in the chain', 'Where', 'Scarcity'],
         monoColumns: [2],
         statusColumn: 3,
-        rows: rows.map(item => [
+        rows: rows.map((item) => [
           item.name,
           item.role,
           item.jurisdictions.join(' '),
@@ -493,10 +493,12 @@ function participantsPage(): SitePage {
         blurb:
           'The mandate’s own screen — concentration, substitutability, lead time, demand ' +
           'inelasticity — applied one participant at a time.',
-        items: (Object.keys(SCARCITY_DETAIL) as Array<keyof typeof SCARCITY_DETAIL>).map(grade => ({
-          term: SCARCITY_LABEL[grade],
-          detail: SCARCITY_DETAIL[grade],
-        })),
+        items: (Object.keys(SCARCITY_DETAIL) as Array<keyof typeof SCARCITY_DETAIL>).map(
+          (grade) => ({
+            term: SCARCITY_LABEL[grade],
+            detail: SCARCITY_DETAIL[grade],
+          }),
+        ),
       },
       {
         kind: 'cards',
@@ -505,7 +507,7 @@ function participantsPage(): SitePage {
           `${binding.length} of ${progress.total} participants are graded a hard constraint. ` +
           'These are the ones worth knowing by name.',
         columns: 2,
-        cards: binding.map(item => ({
+        cards: binding.map((item) => ({
           title: item.name,
           body: item.why,
           meta: `${item.role}  ·  ${item.jurisdictions.join(' ')}`,
@@ -515,7 +517,7 @@ function participantsPage(): SitePage {
         kind: 'index',
         heading: 'The chain, layer by layer',
         blurb: 'Ordered upstream to downstream. The number is how many participants are mapped.',
-        entries: CHAIN_LAYERS.map(layer => ({
+        entries: CHAIN_LAYERS.map((layer) => ({
           label: layer.name,
           meta: String(participantsInLayer(layer.id).length),
           anchor: layer.id,
@@ -551,7 +553,7 @@ function actingPage(): SitePage {
           detail: limit,
         })),
       },
-      ...ACTION_ROUTES.map(route => ({
+      ...ACTION_ROUTES.map((route) => ({
         kind: 'definitions' as const,
         heading: route.name,
         blurb: route.gives,
@@ -593,7 +595,7 @@ function actingPage(): SitePage {
         // the status belongs next to the requirement, not in a column of its own.
         kind: 'definitions',
         heading: 'The ledger',
-        items: READINESS.map(item => ({
+        items: READINESS.map((item) => ({
           term: `${item.requirement} — ${READINESS_STATUS_LABEL[item.status]}`,
           detail: item.detail,
         })),
