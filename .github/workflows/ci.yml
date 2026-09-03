@@ -10,7 +10,7 @@ name: CI
 # Substrata shipped to production that way. So the scaffold emits this file with
 # every new site: the gate has something real to wait for from the first commit.
 #
-# Runs the same bundle as `npm run verify` locally — one definition of verified.
+# Runs the same bundle as `pnpm run verify` locally — one definition of verified.
 
 on:
   push:
@@ -32,22 +32,33 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # pnpm before setup-node so `cache: pnpm` can find the store.
+      - uses: pnpm/action-setup@v6
+
+      # action-setup's pnpm defaults its store to <pnpm bin dir>/store, i.e.
+      # INSIDE setup-pnpm/node_modules/.bin — and preparing a git-hosted dep
+      # (sitekit) in a tmp dir nested under a foreign node_modules makes its
+      # tsc emit TS2742 "not portable" declaration errors. Park the store
+      # outside any node_modules, like a normal machine.
+      - run: pnpm config set store-dir ~/.pnpm-store --global
+
       - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
-          cache: npm
+          cache: pnpm
 
-      # `npm ci` not `npm install`: the lockfile is the contract, and a resolution
-      # that drifts from it is exactly how a dependency silently disappears.
-      - run: npm ci
+      # `--frozen-lockfile` not plain install: the lockfile is the contract, and
+      # a resolution that drifts from it is exactly how a dependency silently
+      # disappears.
+      - run: pnpm install --frozen-lockfile
 
       - name: Type check
-        run: npm run type-check
+        run: pnpm run type-check
 
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
 
       # The build is the real test for a content site: a broken import or a bad
       # config surfaces here and nowhere earlier.
       - name: Build
-        run: npm run build
+        run: pnpm run build
