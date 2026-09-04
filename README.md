@@ -15,11 +15,12 @@ one is bought, and nothing in this repository changes when it does.
 config/     the research corpus and the site, as data — the SSOT
             substrata.ts               identity, mandate, phases, disclosure
             substrata-coverage.ts      15 chokepoint materials, 92 producer rows
-            substrata-participants.ts  102 organisations across 10 chain layers
+            substrata-participants.ts  101 organisations across 10 chain layers
             substrata-acting.ts        thesis, action routes, readiness ledger
             site-substrata.ts          those objects, rendered as pages
             site-content.ts            the closed set of section shapes
-components/ the renderers. Presentational only; they never fetch.
+lib/        the site's identity and link helper. The renderers themselves come
+            from the shared sitekit package; presentational only, never fetch.
 app/        one catch-all route. Pages are data, so adding one is a config entry.
 app/globals.css   every design token, and the only place a colour is defined.
 ```
@@ -35,7 +36,7 @@ a finding. There is no trading desk and nothing here implies one.
 ```bash
 pnpm install
 pnpm run dev        # http://localhost:3000
-pnpm run verify     # type-check + lint + tests
+pnpm run verify     # format check + type-check + lint + tests
 ```
 
 ## Deployment
