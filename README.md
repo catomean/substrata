@@ -33,9 +33,9 @@ a finding. There is no trading desk and nothing here implies one.
 ## Development
 
 ```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run verify     # type-check + lint + tests
+pnpm install
+pnpm run dev        # http://localhost:3000
+pnpm run verify     # type-check + lint + tests
 ```
 
 ## Deployment
