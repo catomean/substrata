@@ -18,8 +18,8 @@ importers:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
       sitekit:
-        specifier: github:bitbaum/sitekit#v0.3.0
-        version: https://codeload.github.com/bitbaum/sitekit/tar.gz/9122b6b6c62a35aeefcb5508d1da9914b0435367(react@19.2.8)
+        specifier: npm:@bitbaum/sitekit@^0.3.0
+        version: '@bitbaum/sitekit@0.3.0(react@19.2.8)'
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -127,6 +127,12 @@ packages:
   '@babel/types@7.29.8':
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
     engines: {node: '>=6.9.0'}
+
+  '@bitbaum/sitekit@0.3.0':
+    resolution: {integrity: sha512-DnIwW3F92PEXFW4h9VSW2q+HS4fYSlEX/TnjIUjQ+Pcjja38hRN5eo45B1c6nDOiXl2/8v9V7yRYjtLQ1zG6pQ==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      react: '>=18'
 
   '@emnapi/core@1.10.0':
     resolution: {integrity: sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw==}
@@ -1950,13 +1956,6 @@ packages:
     resolution: {integrity: sha512-6x6dK6zJdpTzF4sQeNYxwtvBzf6Eg4GtlesS94HOvTudUeyK2WXAaIfmDgsyslYrRBeFIlsi54AYsFGUuhmvrQ==}
     engines: {node: '>= 0.4'}
 
-  sitekit@https://codeload.github.com/bitbaum/sitekit/tar.gz/9122b6b6c62a35aeefcb5508d1da9914b0435367:
-    resolution: {gitHosted: true, integrity: sha512-O/L7IXQXDUXhoGbrv7nXo8O+14YLQwuXIUHvSqLthC9y/0ZFNnmy62qN8QTV+uimjI9CpAp1fvI6HKgYLpbxCg==, tarball: https://codeload.github.com/bitbaum/sitekit/tar.gz/9122b6b6c62a35aeefcb5508d1da9914b0435367}
-    version: 0.3.0
-    engines: {node: '>=20'}
-    peerDependencies:
-      react: '>=18'
-
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -2136,6 +2135,9 @@ packages:
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
+  zod@4.5.4:
+    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
+
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
@@ -2239,6 +2241,11 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
+
+  '@bitbaum/sitekit@0.3.0(react@19.2.8)':
+    dependencies:
+      react: 19.2.8
+      zod: 4.5.4
 
   '@emnapi/core@1.10.0':
     dependencies:
@@ -4109,11 +4116,6 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  sitekit@https://codeload.github.com/bitbaum/sitekit/tar.gz/9122b6b6c62a35aeefcb5508d1da9914b0435367(react@19.2.8):
-    dependencies:
-      react: 19.2.8
-      zod: 4.4.3
-
   source-map-js@1.2.1: {}
 
   stable-hash@0.0.5: {}
@@ -4369,3 +4371,5 @@ snapshots:
       zod: 4.4.3
 
   zod@4.4.3: {}
+
+  zod@4.5.4: {}
