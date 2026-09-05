@@ -1,6 +1,10 @@
 # pnpm 11 blocks dependency build scripts by default; allow only what we trust.
 allowBuilds:
-  'sitekit@https://codeload.github.com/bitbaum/sitekit/tar.gz/9122b6b6c62a35aeefcb5508d1da9914b0435367': true
   esbuild: true
   sharp: true
   unrs-resolver: true
+
+# Own package published to npm <24h ago; exempt from the minimum-release-age
+# supply-chain window. Redundant once the release ages past the window.
+minimumReleaseAgeExclude:
+  - '@bitbaum/sitekit'
